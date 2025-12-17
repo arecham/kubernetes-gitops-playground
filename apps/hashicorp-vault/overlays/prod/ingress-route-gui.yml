@@ -4,15 +4,15 @@
  kind: IngressRoute
  metadata:
    name: vault-ingressroute-gui  # <-- Replace with your IngressRoute name
-   namespace: hashi-vault-prod  # <-- Replace with your namespace
+   namespace: vault # <-- Replace with your namespace
  spec:
    entryPoints:
-     - websecure
+   - websecure
    routes:
-     - match: Host(`vault.home.nerdylyonsden.io`)  # <-- Replace with your FQDN
-       kind: Rule
-       services:
-         - name: hashi-vault-prod-ui  # <-- Replace with your service name
-           port: 8200
+   - match: Host(`vault.equipement.gov.ma`)  # <-- Replace with your FQDN
+     kind: Rule
+     services:
+     - name: hashi-vault-prod-ui  # <-- Replace with your service name
+       port: 8200
    tls:
-     secretName: prod-apps-certificate-secret
+     certResolver: default
