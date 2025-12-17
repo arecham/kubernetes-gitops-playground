@@ -12,7 +12,7 @@
    - match: Host(`vault.equipement.gov.ma`)  # <-- Replace with your FQDN
      kind: Rule
      services:
-     - name: hashi-vault-prod-ui  # <-- Replace with your service name
+     - name: vault-mgt-ui  # <-- Replace with your service name
        port: 8200
    tls:
      certResolver: default
